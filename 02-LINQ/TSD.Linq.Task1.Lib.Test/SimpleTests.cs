@@ -97,5 +97,10 @@ namespace TSD.Linq.Task1.Lib.Test
                 System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
             }
         }
+
+        [Test]
+        public void hotfixTest(){
+            Assert.AreEqual(0, 0);
+        }
     }
 }
