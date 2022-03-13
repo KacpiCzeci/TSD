@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TSD.Linq.Task1.Lib.Model;
 using System.Linq;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace TSD.Linq.Task1.Lib
 {
@@ -220,6 +222,37 @@ namespace TSD.Linq.Task1.Lib
             GoldPrice best = prices.OrderByDescending(price => price.Price).First();
             GoldPrice worst = prices.OrderBy(price => price.Price).First();
             return new Tuple<GoldPrice, GoldPrice, double>(best, worst, best.Price-worst.Price);
+        }
+
+        //TASK 12
+        public void saveLINQtoXML(DateTime start, DateTime end){
+            List<GoldPrice> prices = GetGoldPrices(start, end).GetAwaiter().GetResult();
+            XDocument xml = new XDocument(
+                new XComment($"Gold prices from {start.ToString()} to {end.ToString()}"),
+                new XElement("GoldPrices",
+                    prices.Select(price => new XElement("GoldPrice",
+                            new XElement("Date", price.Date.ToString("o")),
+                            new XElement("Price", price.Price.ToString())
+                        )
+                    )
+                )
+            );
+            xml.Save("goldprices.xml"); 
+        }
+
+        //TASK 13
+        public List<GoldPrice> readXMLbyLINQQuery(){
+            List<GoldPrice> prices = XDocument.Load("goldprices.xml").Descendants("GoldPrice")
+                                    .Select(price => (GoldPrice) new XmlSerializer(typeof(GoldPrice)).Deserialize(price.CreateReader()))
+                                    .ToList();
+            return prices;
+        }
+
+        public List<GoldPrice> readXMLbyLINQMethod(){
+            List<GoldPrice> prices = XDocument.Load("goldprices.xml").Descendants("GoldPrice")
+                                    .Select(price => (GoldPrice) new XmlSerializer(typeof(GoldPrice)).Deserialize(price.CreateReader()))
+                                    .ToList();
+            return prices;
         }
     }
 }
