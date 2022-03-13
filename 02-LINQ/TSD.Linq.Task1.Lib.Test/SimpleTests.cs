@@ -129,5 +129,18 @@ namespace TSD.Linq.Task1.Lib.Test
         public void Task12(){
             goldClient.saveLINQtoXML(new DateTime(2021, 01, 01), new DateTime(2021, 03, 17));
         }
+
+        [Test]
+        public void Task13(){
+            List<GoldPrice> prices = goldClient.readXMLbyLINQQuery();
+            // foreach (GoldPrice price in prices){
+            //     System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            // }
+
+            // prices = goldClient.readXMLbyLINQMethod();
+            // foreach (GoldPrice price in prices){
+            //     System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            // }
+        }
     }
 }

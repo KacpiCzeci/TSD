@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using TSD.Linq.Task1.Lib.Model;
 using System.Linq;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace TSD.Linq.Task1.Lib
 {
@@ -237,6 +238,21 @@ namespace TSD.Linq.Task1.Lib
                 )
             );
             xml.Save("goldprices.xml"); 
+        }
+
+        //TASK 13
+        public List<GoldPrice> readXMLbyLINQQuery(){
+            List<GoldPrice> prices = XDocument.Load("goldprices.xml").Descendants("GoldPrice")
+                                    .Select(price => (GoldPrice) new XmlSerializer(typeof(GoldPrice)).Deserialize(price.CreateReader()))
+                                    .ToList();
+            return prices;
+        }
+
+        public List<GoldPrice> readXMLbyLINQMethod(){
+            List<GoldPrice> prices = XDocument.Load("goldprices.xml").Descendants("GoldPrice")
+                                    .Select(price => (GoldPrice) new XmlSerializer(typeof(GoldPrice)).Deserialize(price.CreateReader()))
+                                    .ToList();
+            return prices;
         }
     }
 }
