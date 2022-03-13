@@ -72,5 +72,39 @@ namespace TSD.Linq.Task1.Lib
             return prices.OrderBy(price => price.Price).Take(3).ToList();
         }
 
+        //TASK 3
+        public List<GoldPrice> get005BetterQuery1(){
+            //Profit over 5% compared to current day
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2020, 01, 01), new DateTime(2020, 01, 31)).GetAwaiter().GetResult();
+            GoldPrice current = this.GetCurrentGoldPrice().GetAwaiter().GetResult();
+            return (from price in prices where current.Price / price.Price >= 1.05 select price).ToList();
+        }
+
+        public List<GoldPrice> get005BetterMethod1(){
+            //Profit over 5% compared to current day
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2020, 01, 01), new DateTime(2020, 01, 31)).GetAwaiter().GetResult();
+            GoldPrice current = this.GetCurrentGoldPrice().GetAwaiter().GetResult();
+            return prices.Where(price => current.Price / price.Price >= 1.05).ToList();
+        }
+
+        public List<Tuple<DateTime, List<GoldPrice>>> get005BetterQuery2(){
+            //Profit over 5% compared to every other day in January
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2020, 01, 01), new DateTime(2020, 01, 31)).GetAwaiter().GetResult();
+            List<Tuple<DateTime, List<GoldPrice>>> all = new List<Tuple<DateTime, List<GoldPrice>>>();
+            foreach (GoldPrice day_of_purchase in prices){
+                all.Add((day_of_purchase.Date, (from price in prices where day_of_purchase.Price / price.Price >= 1.05 select price).ToList()).ToTuple());
+            }
+            return all;
+        }
+
+        public List<Tuple<DateTime, List<GoldPrice>>> get005BetterMethod2(){
+            //Profit over 5% compared to every other day in January
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2020, 01, 01), new DateTime(2020, 01, 31)).GetAwaiter().GetResult();
+            List<Tuple<DateTime, List<GoldPrice>>> all = new List<Tuple<DateTime, List<GoldPrice>>>();
+            foreach (GoldPrice day_of_purchase in prices){
+                all.Add((day_of_purchase.Date, prices.Where(price => day_of_purchase.Price / price.Price >= 1.05).ToList()).ToTuple());
+            }
+            return all;
+        }
     }
 }

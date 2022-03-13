@@ -61,5 +61,28 @@ namespace TSD.Linq.Task1.Lib.Test
                 System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
             }
         }
+
+        [Test]
+        public void Task3() {
+            List<GoldPrice> prices1 = goldClient.get005BetterQuery1();
+            foreach (GoldPrice price in prices1){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices1 = goldClient.get005BetterMethod1();
+            foreach (GoldPrice price in prices1){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            List<Tuple<DateTime, List<GoldPrice>>> prices2 = goldClient.get005BetterQuery2();
+            foreach (Tuple<DateTime, List<GoldPrice>> price in prices2){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+
+            prices2 = goldClient.get005BetterMethod2();
+            foreach (Tuple<DateTime, List<GoldPrice>> price in prices2){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+        }
     }
 }
