@@ -115,5 +115,14 @@ namespace TSD.Linq.Task1.Lib.Test
                 System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
             }
         }
+
+        [Test]
+        public void Task9(){
+            Tuple<GoldPrice, GoldPrice, double> prices = goldClient.bestInvestmentBetweenQuery();
+            System.Console.WriteLine("Date: {0}, Price: {1}, Date: {2}, Price: {3}, Difference: {4} \n", prices.Item1.Date, prices.Item1.Price, prices.Item2.Date, prices.Item2.Price, prices.Item3);
+
+            prices = goldClient.bestInvestmentBetweenMethod();
+            System.Console.WriteLine("Date: {0}, Price: {1}, Date: {2}, Price: {3}, Difference: {4} \n", prices.Item1.Date, prices.Item1.Price, prices.Item2.Date, prices.Item2.Price, prices.Item3);
+        }
     }
 }

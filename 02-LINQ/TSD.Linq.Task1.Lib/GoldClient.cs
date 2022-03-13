@@ -172,5 +172,54 @@ namespace TSD.Linq.Task1.Lib
             }
             return averages;
         }
+
+        //TASK 9
+        public Tuple<GoldPrice, GoldPrice, double> bestInvestmentBetweenQuery(){
+            List<GoldPrice> prices = new List<GoldPrice>();
+            DateTime start = new DateTime(2019, 01, 01);
+            DateTime next = new DateTime(2019, 01, 01);
+            DateTime end = DateTime.Now;
+            int difference = (end-start).Days;
+            System.Console.WriteLine(difference);
+            while(difference > 0){
+                if (difference >= 93){
+                    next = next.AddDays(93);
+                    prices.AddRange(this.GetGoldPrices(start, next).GetAwaiter().GetResult());
+                    start = start.AddDays(93);
+                    difference -= 93;
+                }
+                else{
+                    prices.AddRange(this.GetGoldPrices(start, end).GetAwaiter().GetResult());
+                    difference -= 93;
+                }
+            }
+            GoldPrice best = (from price in prices orderby price.Price descending select price).First();
+            GoldPrice worst = (from price in prices orderby price.Price select price).First();
+            return (best, worst, best.Price-worst.Price).ToTuple();
+        }
+
+        public Tuple<GoldPrice, GoldPrice, double> bestInvestmentBetweenMethod(){
+            List<GoldPrice> prices = new List<GoldPrice>();
+            DateTime start = new DateTime(2019, 01, 01);
+            DateTime next = new DateTime(2019, 01, 01);
+            DateTime end = DateTime.Now;
+            int difference = (end-start).Days;
+            System.Console.WriteLine(difference);
+            while(difference > 0){
+                if (difference >= 93){
+                    next = next.AddDays(93);
+                    prices.AddRange(this.GetGoldPrices(start, next).GetAwaiter().GetResult());
+                    start = start.AddDays(93);
+                    difference -= 93;
+                }
+                else{
+                    prices.AddRange(this.GetGoldPrices(start, end).GetAwaiter().GetResult());
+                    difference -= 93;
+                }
+            }
+            GoldPrice best = prices.OrderByDescending(price => price.Price).First();
+            GoldPrice worst = prices.OrderBy(price => price.Price).First();
+            return new Tuple<GoldPrice, GoldPrice, double>(best, worst, best.Price-worst.Price);
+        }
     }
 }
