@@ -106,5 +106,50 @@ namespace TSD.Linq.Task1.Lib
             }
             return all;
         }
+
+        //TASK 4
+        public List<GoldPrice> getBest3ofSecondTenQuery(){
+            List<GoldPrice> prices = new List<GoldPrice>();
+            DateTime start = new DateTime(2019, 01, 01);
+            DateTime next = new DateTime(2019, 01, 01);
+            DateTime end = DateTime.Now;
+            int difference = (end-start).Days;
+            System.Console.WriteLine(difference);
+            while(difference > 0){
+                if (difference >= 93){
+                    next = next.AddDays(93);
+                    prices.AddRange(this.GetGoldPrices(start, next).GetAwaiter().GetResult());
+                    start = start.AddDays(93);
+                    difference -= 93;
+                }
+                else{
+                    prices.AddRange(this.GetGoldPrices(start, end).GetAwaiter().GetResult());
+                    difference -= 93;
+                }
+            }
+            return (from price in prices orderby price.Price descending select price).Skip(10).Take(3).ToList();
+        }
+
+        public List<GoldPrice> getBest3ofSecondTenMethod(){
+            List<GoldPrice> prices = new List<GoldPrice>();
+            DateTime start = new DateTime(2019, 01, 01);
+            DateTime next = new DateTime(2019, 01, 01);
+            DateTime end = DateTime.Now;
+            int difference = (end-start).Days;
+            System.Console.WriteLine(difference);
+            while(difference > 0){
+                if (difference >= 93){
+                    next = next.AddDays(93);
+                    prices.AddRange(this.GetGoldPrices(start, next).GetAwaiter().GetResult());
+                    start = start.AddDays(93);
+                    difference -= 93;
+                }
+                else{
+                    prices.AddRange(this.GetGoldPrices(start, end).GetAwaiter().GetResult());
+                    difference -= 93;
+                }
+            }
+            return prices.OrderByDescending(price => price.Price).Skip(10).Take(3).ToList();
+        }
     }
 }

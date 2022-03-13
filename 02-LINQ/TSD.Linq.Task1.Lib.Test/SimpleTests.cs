@@ -84,5 +84,18 @@ namespace TSD.Linq.Task1.Lib.Test
                 System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
             }
         }
+
+        [Test]
+        public void Task4() {
+            List<GoldPrice> prices = goldClient.getBest3ofSecondTenQuery();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getBest3ofSecondTenMethod();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+        }
     }
 }
