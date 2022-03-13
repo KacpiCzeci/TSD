@@ -133,14 +133,14 @@ namespace TSD.Linq.Task1.Lib.Test
         [Test]
         public void Task13(){
             List<GoldPrice> prices = goldClient.readXMLbyLINQQuery();
-            // foreach (GoldPrice price in prices){
-            //     System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
-            // }
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
 
-            // prices = goldClient.readXMLbyLINQMethod();
-            // foreach (GoldPrice price in prices){
-            //     System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
-            // }
+            prices = goldClient.readXMLbyLINQMethod();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
         }
     }
 }
