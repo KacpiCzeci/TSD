@@ -38,5 +38,28 @@ namespace TSD.Linq.Task1.Lib.Test
             Assert.IsNotNull(thisYearPrices);
             Assert.Greater(thisYearPrices.Count, 0);
         }
+
+        [Test]
+        public void Task2() {
+            List<GoldPrice> prices = goldClient.getBest3Query();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getBest3Method();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getWorst3Query();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getWorst3Method();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+        }
     }
 }

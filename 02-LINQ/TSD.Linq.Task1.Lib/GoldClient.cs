@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TSD.Linq.Task1.Lib.Model;
+using System.Linq;
 
 namespace TSD.Linq.Task1.Lib
 {
@@ -48,6 +49,27 @@ namespace TSD.Linq.Task1.Lib
                 return null;
             }
 
+        }
+
+        //TASK 2
+        public List<GoldPrice> getBest3Query() {
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2022, 01, 01), new DateTime(2022, 03, 13)).GetAwaiter().GetResult();
+            return (from price in prices orderby price.Price descending select price).Take(3).ToList();
+        }
+
+        public List<GoldPrice> getBest3Method() {
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2022, 01, 01), new DateTime(2022, 03, 13)).GetAwaiter().GetResult();
+            return prices.OrderByDescending(price => price.Price).Take(3).ToList();
+        }
+
+        public List<GoldPrice> getWorst3Query() {
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2022, 01, 01), new DateTime(2022, 03, 13)).GetAwaiter().GetResult();
+            return (from price in prices orderby price.Price select price).Take(3).ToList();
+        }
+
+        public List<GoldPrice> getWorst3Method() {
+            List<GoldPrice> prices = this.GetGoldPrices(new DateTime(2022, 01, 01), new DateTime(2022, 03, 13)).GetAwaiter().GetResult();
+            return prices.OrderBy(price => price.Price).Take(3).ToList();
         }
 
     }
