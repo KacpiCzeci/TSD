@@ -102,5 +102,18 @@ namespace TSD.Linq.Task1.Lib.Test
         public void hotfixTest(){
             Assert.AreEqual(0, 0);
         }
+
+        [Test]
+        public void Task8(){
+            List<Tuple<int, double>> prices = goldClient.averageQuery();
+            foreach (Tuple<int, double> price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+
+            prices = goldClient.averangeMethod();
+            foreach (Tuple<int, double> price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+        }
     }
 }

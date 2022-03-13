@@ -151,5 +151,26 @@ namespace TSD.Linq.Task1.Lib
             }
             return prices.OrderByDescending(price => price.Price).Skip(10).Take(3).ToList();
         }
+
+        //TASK 8
+        public List<Tuple<int, double>> averageQuery(){
+            List<Tuple<int, double>> averages = new List<Tuple<int, double>>();
+            List<int> years = new List<int> {2019, 2020, 2021};
+            foreach (int year in years){
+                List<GoldPrice> prices = GetGoldPrices(new DateTime(year, 01, 01), new DateTime(year, 12, 31)).GetAwaiter().GetResult();
+                averages.Add(new Tuple<int, double>(year, (from price in prices select price.Price).Average()));
+            }
+            return averages;
+        }
+
+        public List<Tuple<int, double>> averangeMethod(){
+            List<Tuple<int, double>> averages = new List<Tuple<int, double>>();
+            List<int> years = new List<int> {2019, 2020, 2021};
+            foreach (int year in years){
+                List<GoldPrice> prices = GetGoldPrices(new DateTime(year, 01, 01), new DateTime(year, 12, 31)).GetAwaiter().GetResult();
+                averages.Add(new Tuple<int, double>(year, prices.Average(price => price.Price)));
+            }
+            return averages;
+        }
     }
 }
