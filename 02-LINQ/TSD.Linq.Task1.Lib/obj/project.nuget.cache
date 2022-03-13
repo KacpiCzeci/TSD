@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8Be+GKA3G8y2qAmLYeIGgp9qefWWtIE+GJBJudHEDsUS2h+28tduX/SMSMtMtTDaABkUODXOAu3qoV8sZpPxtQ==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ktrze\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

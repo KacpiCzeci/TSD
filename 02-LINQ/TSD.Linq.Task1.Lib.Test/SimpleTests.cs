@@ -40,8 +40,89 @@ namespace TSD.Linq.Task1.Lib.Test
         }
 
         [Test]
+        public void Task2() {
+            List<GoldPrice> prices = goldClient.getBest3Query();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getBest3Method();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getWorst3Query();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getWorst3Method();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+        }
+
+        [Test]
+        public void Task3() {
+            List<GoldPrice> prices1 = goldClient.get005BetterQuery1();
+            foreach (GoldPrice price in prices1){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices1 = goldClient.get005BetterMethod1();
+            foreach (GoldPrice price in prices1){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            List<Tuple<DateTime, List<GoldPrice>>> prices2 = goldClient.get005BetterQuery2();
+            foreach (Tuple<DateTime, List<GoldPrice>> price in prices2){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+
+            prices2 = goldClient.get005BetterMethod2();
+            foreach (Tuple<DateTime, List<GoldPrice>> price in prices2){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+        }
+
+        [Test]
+        public void Task4() {
+            List<GoldPrice> prices = goldClient.getBest3ofSecondTenQuery();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+
+            prices = goldClient.getBest3ofSecondTenMethod();
+            foreach (GoldPrice price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Date, price.Price);
+            }
+        }
+
+        [Test]
         public void hotfixTest(){
             Assert.AreEqual(0, 0);
+        }
+
+        [Test]
+        public void Task8(){
+            List<Tuple<int, double>> prices = goldClient.averageQuery();
+            foreach (Tuple<int, double> price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+
+            prices = goldClient.averangeMethod();
+            foreach (Tuple<int, double> price in prices){
+                System.Console.WriteLine("Date: {0}, Price: {1}", price.Item1, price.Item2);
+            }
+        }
+
+        [Test]
+        public void Task9(){
+            Tuple<GoldPrice, GoldPrice, double> prices = goldClient.bestInvestmentBetweenQuery();
+            System.Console.WriteLine("Date: {0}, Price: {1}, Date: {2}, Price: {3}, Difference: {4} \n", prices.Item1.Date, prices.Item1.Price, prices.Item2.Date, prices.Item2.Price, prices.Item3);
+
+            prices = goldClient.bestInvestmentBetweenMethod();
+            System.Console.WriteLine("Date: {0}, Price: {1}, Date: {2}, Price: {3}, Difference: {4} \n", prices.Item1.Date, prices.Item1.Price, prices.Item2.Date, prices.Item2.Price, prices.Item3);
         }
     }
 }
