@@ -38,5 +38,10 @@ namespace TSD.Linq.Task1.Lib.Test
             Assert.IsNotNull(thisYearPrices);
             Assert.Greater(thisYearPrices.Count, 0);
         }
+
+        [Test]
+        public void hotfixTest(){
+            Assert.AreEqual(0, 0);
+        }
     }
 }
