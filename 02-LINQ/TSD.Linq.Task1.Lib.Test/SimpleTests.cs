@@ -124,5 +124,10 @@ namespace TSD.Linq.Task1.Lib.Test
             prices = goldClient.bestInvestmentBetweenMethod();
             System.Console.WriteLine("Date: {0}, Price: {1}, Date: {2}, Price: {3}, Difference: {4} \n", prices.Item1.Date, prices.Item1.Price, prices.Item2.Date, prices.Item2.Price, prices.Item3);
         }
+
+        [Test]
+        public void Task12(){
+            goldClient.saveLINQtoXML(new DateTime(2021, 01, 01), new DateTime(2021, 03, 17));
+        }
     }
 }
