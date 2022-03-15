@@ -231,8 +231,8 @@ namespace TSD.Linq.Task1.Lib
                 new XComment($"Gold prices from {start.ToString()} to {end.ToString()}"),
                 new XElement("GoldPrices",
                     prices.Select(price => new XElement("GoldPrice",
-                            new XElement("Date", price.Date.ToString("o")),
-                            new XElement("Price", price.Price.ToString())
+                            new XElement("Date", price.Date),
+                            new XElement("Price", price.Price)
                         )
                     )
                 )
@@ -243,15 +243,20 @@ namespace TSD.Linq.Task1.Lib
         //TASK 13
         public List<GoldPrice> readXMLbyLINQQuery(){
             List<GoldPrice> prices = XDocument.Load("goldprices.xml").Descendants("GoldPrice")
-                                    .Select(price => (GoldPrice) new XmlSerializer(typeof(GoldPrice)).Deserialize(price.CreateReader()))
-                                    .ToList();
+                                    .Select(price => new GoldPrice {
+                                        Date = (DateTime) price.Element("Date"),
+                                        Price = (Double) price.Element("Price")
+                                    }).ToList();
             return prices;
         }
 
         public List<GoldPrice> readXMLbyLINQMethod(){
-            List<GoldPrice> prices = XDocument.Load("goldprices.xml").Descendants("GoldPrice")
-                                    .Select(price => (GoldPrice) new XmlSerializer(typeof(GoldPrice)).Deserialize(price.CreateReader()))
-                                    .ToList();
+            List<GoldPrice> prices = (from price in XDocument.Load("goldprices.xml").Descendants("GoldPrice") 
+                                      select new GoldPrice {
+                                        Date = (DateTime) price.Element("Date"),
+                                        Price = (Double) price.Element("Price")}
+                                      ).ToList();
+
             return prices;
         }
     }
