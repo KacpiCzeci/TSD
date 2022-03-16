@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jvL//GhIq7aaOzxZ6FDtszIecfUjF72LdW/Sie7bZOObv/JKTip/uq9OuB6QnKpoWpFRbzrmaZ1OBIN76e/E8w==",
+  "dgSpecHash": "Bi47c9ILDaHq+Mbg0fqGe1m2sw1XOM8nqPWMKMwVDte37ggSvOuNbiyww4/7afBDsMJ7DPJuSo7yLIQ0d1J8tg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
+  "projectFilePath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ktrze\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\ktrze\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
