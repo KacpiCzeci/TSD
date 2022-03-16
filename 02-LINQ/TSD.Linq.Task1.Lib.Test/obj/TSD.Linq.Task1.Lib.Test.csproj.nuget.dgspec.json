@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj": {}
+    "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj": {}
   },
   "projects": {
-    "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj": {
+    "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
+        "projectUniqueName": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
         "projectName": "TSD.Linq.Task1.Lib.Test",
-        "projectPath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
+        "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
         "packagesPath": "C:\\Users\\ktrze\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\obj\\",
+        "outputPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ktrze\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj": {
-                "projectPath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj"
+              "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj": {
+                "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj": {
+    "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
+        "projectUniqueName": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
         "projectName": "TSD.Linq.Task1.Lib",
-        "projectPath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
+        "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
         "packagesPath": "C:\\Users\\ktrze\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\obj\\",
+        "outputPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ktrze\\AppData\\Roaming\\NuGet\\NuGet.Config"

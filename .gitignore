@@ -9,6 +9,10 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+TSD/Linq/Task1/Lib/bin/
+TSD/Linq/Task1/Lib/obj/
+TSD/Linq/Task1/Lib/Test/bin/
+TSD/Linq/Task1/Lib/obj/
 
 # Used by dotenv library to load environment variables.
 # .env
