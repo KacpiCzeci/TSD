@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj": {}
+    "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib.Test/TSD.Linq.Task1.Lib.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj": {
+    "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib.Test/TSD.Linq.Task1.Lib.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
+        "projectUniqueName": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib.Test/TSD.Linq.Task1.Lib.Test.csproj",
         "projectName": "TSD.Linq.Task1.Lib.Test",
-        "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\TSD.Linq.Task1.Lib.Test.csproj",
-        "packagesPath": "C:\\Users\\ktrze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib.Test\\obj\\",
+        "projectPath": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib.Test/TSD.Linq.Task1.Lib.Test.csproj",
+        "packagesPath": "/Users/KacpiCzeci/.nuget/packages/",
+        "outputPath": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib.Test/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ktrze\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/KacpiCzeci/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,8 +29,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj": {
-                "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj"
+              "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/TSD.Linq.Task1.Lib.csproj": {
+                "projectPath": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/TSD.Linq.Task1.Lib.csproj"
               }
             }
           }
@@ -70,21 +73,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj": {
+    "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/TSD.Linq.Task1.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
+        "projectUniqueName": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/TSD.Linq.Task1.Lib.csproj",
         "projectName": "TSD.Linq.Task1.Lib",
-        "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
-        "packagesPath": "C:\\Users\\ktrze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\obj\\",
+        "projectPath": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/TSD.Linq.Task1.Lib.csproj",
+        "packagesPath": "/Users/KacpiCzeci/.nuget/packages/",
+        "outputPath": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ktrze\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/KacpiCzeci/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -128,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

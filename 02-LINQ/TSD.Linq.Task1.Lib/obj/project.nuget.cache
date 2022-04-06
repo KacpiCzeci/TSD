@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jPcibdEstKs6XkF6QGFHh6IQOPIipSgnyklXSCmY8ylvdG/P7uuYIdaQnrY7d0mdzs0aCzNWFd6jhUEubbkCMg==",
+  "dgSpecHash": "1Arw3va+0eWXuWU2Q1NY/ksJ1xi9SYcMGWK2cQ73Lxo5r9j7B2+Fn83PXpFHQ3tZk05vOKbz0oWqQBvMEuTRgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\02-LINQ\\TSD.Linq.Task1.Lib\\TSD.Linq.Task1.Lib.csproj",
+  "projectFilePath": "/Users/KacpiCzeci/Desktop/Github/TSD/02-LINQ/TSD.Linq.Task1.Lib/TSD.Linq.Task1.Lib.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ktrze\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "/Users/KacpiCzeci/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }
