@@ -7,19 +7,21 @@ namespace Yummy.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage="You need to put name for your Recipe.")]
-        [RegularExpression(@"[A-Za-z]+", ErrorMessage="You need to have some text not only digest xd.")]
+        [RegularExpression(@"^.*[a-zA-Z].*$", ErrorMessage="You need to have some text not only digest xd.")]
         public string Name { get; set; }
 
         [Required(ErrorMessage="You need to put time for your Recipe.")]
-        [RegularExpression(@"[0-9]+", ErrorMessage="Time need to be a number.")]
+        [RegularExpression(@"^-?[0-9]+$", ErrorMessage="Time need to be a number.")]
+        [Range(0, Int32.MaxValue, ErrorMessage="Time should be positive.")]
         public int Time { get; set; }
 
         [Required(ErrorMessage="You need to put difficulty for your Recipe.")]
-        [RegularExpression(@"[A-Za-z]+", ErrorMessage="Only text ranges are allowed.")]
+        [RegularExpression(@"^[A-Za-z]+$", ErrorMessage="Only text ranges are allowed.")]
         public string Difficulty { get; set; }
 
         [Display(Name = "Favourite")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage="Likes need to be a numbers.")]
+        [RegularExpression(@"^-?[0-9]+$", ErrorMessage="Likes need to be a numbers.")]
+        [Range(0, Int32.MaxValue, ErrorMessage="Likes should be positive.")]
         public int? NumberOfLikes { get; set; } = 0;
 
         [Required(ErrorMessage="You need to put ingredients for your Recipe.")]
