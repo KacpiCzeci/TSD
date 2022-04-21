@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HomeLibrary;
 
 namespace _04_WPF
 {
@@ -23,6 +24,11 @@ namespace _04_WPF
         public MainWindow()
         {
             InitializeComponent();
+            this.BookList.ItemsSource = MyBookCollection.GetMyCollection();
+        }
+
+        public void getBooks(){
+            this.BookList.ItemsSource = MyBookCollection.GetMyCollection();
         }
     }
 }
