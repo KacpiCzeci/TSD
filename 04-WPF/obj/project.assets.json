@@ -1,72 +1,3 @@
-<<<<<<< Updated upstream
-{
-  "version": 3,
-  "targets": {
-    "net6.0-windows7.0": {}
-  },
-  "libraries": {},
-  "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
-  },
-  "packageFolders": {
-    "C:\\Users\\ktrze\\.nuget\\packages\\": {}
-  },
-  "project": {
-    "version": "1.0.0",
-    "restore": {
-      "projectUniqueName": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\04-WPF\\04-WPF.csproj",
-      "projectName": "04-WPF",
-      "projectPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\04-WPF\\04-WPF.csproj",
-      "packagesPath": "C:\\Users\\ktrze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\04-WPF\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\ktrze\\AppData\\Roaming\\NuGet\\NuGet.Config"
-      ],
-      "originalTargetFrameworks": [
-        "net6.0-windows"
-      ],
-      "sources": {
-        "https://api.nuget.org/v3/index.json": {}
-      },
-      "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
-          "projectReferences": {}
-        }
-      },
-      "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
-      }
-    },
-    "frameworks": {
-      "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WPF": {
-            "privateAssets": "none"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-      }
-    }
-  }
-=======
 {
   "version": 3,
   "targets": {
@@ -134,5 +65,4 @@
       }
     }
   }
->>>>>>> Stashed changes
 }

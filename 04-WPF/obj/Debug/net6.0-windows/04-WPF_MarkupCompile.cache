@@ -1,25 +1,3 @@
-<<<<<<< Updated upstream
-﻿04-WPF
-
-
-winexe
-C#
-.cs
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\
-_04_WPF
-none
-false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\App.xaml
-11407045341
-
-4-1660611100
-194122367757
-MainWindow.xaml;
-
-False
-
-=======
 ﻿04-WPF
 
 
@@ -40,4 +18,3 @@ MainWindow.xaml;
 
 False
 
->>>>>>> Stashed changes

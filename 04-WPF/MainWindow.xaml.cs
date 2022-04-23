@@ -25,16 +25,8 @@ namespace _04_WPF
         public MainWindow()
         {
             InitializeComponent();
-<<<<<<< Updated upstream
-            this.BookList.ItemsSource = MyBookCollection.GetMyCollection();
-        }
-
-        public void getBooks(){
-            this.BookList.ItemsSource = MyBookCollection.GetMyCollection();
-=======
             this.bookList = MyBookCollection.GetMyCollection();
             this.BookList.ItemsSource = this.bookList;
->>>>>>> Stashed changes
         }
 
         public void getBooks(){
@@ -93,6 +85,11 @@ namespace _04_WPF
             if(this.BookList.SelectedIndex != -1){
                 MessageBox.Show("Book was deleted!");
             }
+        }
+
+        public void sliderChange(object sender, RoutedPropertyChangedEventArgs<double> e){
+            int value = (int)(this.Slider.Value) > 255? 255: (int)(this.Slider.Value) < 0? 0: (int)(this.Slider.Value);
+            this.fgrid.Background = new SolidColorBrush(Color.FromArgb((byte)value, 0, (byte)value, 100));
         } 
     }
 }

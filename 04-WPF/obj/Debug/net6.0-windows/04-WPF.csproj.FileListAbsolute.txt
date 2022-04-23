@@ -1,26 +1,3 @@
-<<<<<<< Updated upstream
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.csproj.AssemblyReference.cache
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF_MarkupCompile.cache
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF_MarkupCompile.lref
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\bin\Debug\net6.0-windows\04-WPF.exe
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\bin\Debug\net6.0-windows\04-WPF.deps.json
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\bin\Debug\net6.0-windows\04-WPF.runtimeconfig.json
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\bin\Debug\net6.0-windows\04-WPF.dll
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\bin\Debug\net6.0-windows\04-WPF.pdb
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.g.resources
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.AssemblyInfoInputs.cache
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.AssemblyInfo.cs
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.csproj.CoreCompileInputs.cache
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.dll
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\refint\04-WPF.dll
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.pdb
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.genruntimeconfig.cache
-C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\ref\04-WPF.dll
-=======
 C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\04-WPF.csproj.AssemblyReference.cache
 C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\ktrze\Documents\GitHub\TSD\04-WPF\obj\Debug\net6.0-windows\App.g.cs
@@ -63,4 +40,3 @@ C:\Users\Jula\Desktop\TSD-WPF-develop\04-WPF\obj\Debug\net6.0-windows\refint\04-
 C:\Users\Jula\Desktop\TSD-WPF-develop\04-WPF\obj\Debug\net6.0-windows\04-WPF.pdb
 C:\Users\Jula\Desktop\TSD-WPF-develop\04-WPF\obj\Debug\net6.0-windows\04-WPF.genruntimeconfig.cache
 C:\Users\Jula\Desktop\TSD-WPF-develop\04-WPF\obj\Debug\net6.0-windows\ref\04-WPF.dll
->>>>>>> Stashed changes
