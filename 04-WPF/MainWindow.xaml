@@ -4,62 +4,109 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_04_WPF"
+        xmlns:book="clr-namespace:HomeLibrary"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="900">
+        <Window.Resources>
+            <SolidColorBrush x:Key="myBrush" Color="Red"/>
+            <BitmapImage  x:Key="GIGACHAD" UriSource="https://i.kym-cdn.com/entries/icons/original/000/026/152/gigachad.jpg"/>
+            <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="book:BookFormat"/>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+            <local:ColorConverter x:Key="ColorConverter"/>
+            <local:StyleConverter x:Key="StyleConverter"/>
+        </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-			<RowDefinition Height="1*" />
-			<RowDefinition Height="5*" />
-			<RowDefinition Height="1*" />
+			<RowDefinition Height="1*" MinHeight="100"/>
+			<RowDefinition Height="5*" MinHeight="100"/>
+			<RowDefinition Height="1*" MinHeight="100"/>
 		</Grid.RowDefinitions>
+        <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Row="0"/>
+        <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Row="1"/>
+        <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Row="2"/>
         <Grid x:Name="fgrid" Grid.Row="0">
+            <Grid Width="120" Height="80" Margin="50,0,50,0" Background="{StaticResource myBrush}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Width="100" Source="{StaticResource GIGACHAD}"/>
+            </Grid>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
+            <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="0"/>
+            <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="1"/>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-			        <RowDefinition Height="9*" />
-			        <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" MinHeight="40"/>
+                    <RowDefinition Height="2*" MinHeight="40"/>
+			        <RowDefinition Height="10*" MinHeight="40"/>
+			        <RowDefinition Height="2*" MinHeight="40"/>
 		        </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <ListBox x:Name="BookList" Grid.Column="0" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+                    <Label Margin="15,15,15,15">My books</Label>
+                </Grid>
+                <Grid Grid.Row="1" Margin="15,0,15,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="0"/>
+                    <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="1"/>
+                    <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="2"/>
+                    <Grid Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label>ID</Label>
+                    </Grid>
+                    <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label>Title</Label>
+                    </Grid>
+                    <Grid Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label>IsRead</Label>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" Margin="15,0,15,0">
+                    <ListBox x:Name="BookList" Grid.Column="0" BorderThickness="0" Margin="-2,-2,-2,-2" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
                                 <EventSetter Event="PreviewMouseLeftButtonDown" Handler="showDetails"/>
+                                <Setter Property="Background" Value="{Binding book:BookFormat, Converter={StaticResource ColorConverter}}"/>
+                                <Setter Property="Padding" Value="-2,-2,-2,-2"/>
                             </Style>
                         </ListBox.ItemContainerStyle>
                         <ListBox.ItemTemplate>
 	    			        <DataTemplate>
-		    			        <Grid>
+		    			        <Grid Background="{Binding Format, Converter={StaticResource ColorConverter}}">
 			    			        <Grid.ColumnDefinitions>
-				    			        <ColumnDefinition Width="5*"/>
-					    		        <ColumnDefinition Width="5*"/>
-                                        <ColumnDefinition Width="5*"/>
+				    			        <ColumnDefinition Width="1*"/>
+					    		        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
 						            </Grid.ColumnDefinitions>
-						            <TextBlock Grid.Column="0" Text="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    						        <TextBlock Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                    <TextBlock Grid.Column="2" Text="{Binding IsRead}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="0"/>
+                                    <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="1"/>
+                                    <Border BorderBrush="Gainsboro" BorderThickness="1" Grid.Column="2"/>
+						            <TextBlock Grid.Column="0" Text="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{Binding IsRead, Converter={StaticResource StyleConverter}}"/>
+    						        <TextBlock Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{Binding IsRead, Converter={StaticResource StyleConverter}}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding IsRead}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{Binding IsRead, Converter={StaticResource StyleConverter}}"/>
 		    			        </Grid>
 			    	        </DataTemplate>
 			            </ListBox.ItemTemplate>
 		            </ListBox>
                 </Grid>
-                <Grid Grid.Row="1">
-                    <Button Click="addComponent" HorizontalAlignment="Left" VerticalAlignment="Center">Add</Button>
+                <Grid Grid.Row="3" Margin="15,0,15,0">
+                    <Button Click="addComponent" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">Add</Button>
                 </Grid>
             </Grid>
             <Grid x:Name="Details" Grid.Column="1" Visibility="Hidden">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="14*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="0" Margin="80,0,80,0">
                     <Grid.RowDefinitions>
     			        <RowDefinition Height="1*" />
 	    		        <RowDefinition Height="1*" />
@@ -69,24 +116,26 @@
 			            <RowDefinition Height="1*" />
     		        </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-		    		    <ColumnDefinition Width="5*"/>
-			    	    <ColumnDefinition Width="5*"/>
+		    		    <ColumnDefinition Width="1*"/>
+			    	    <ColumnDefinition Width="4*"/>
 			        </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">ID</Label>
-                    <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding ElementName=BookList, Path=SelectedItem.Id}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" VerticalAlignment="Center">ID</Label>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Width="200" Text="{Binding ElementName=BookList, Path=SelectedItem.Id}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Title</Label>
-                    <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding ElementName=BookList, Path=SelectedItem.Title, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Width="200" Text="{Binding ElementName=BookList, Path=SelectedItem.Title, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">Author</Label>
-                    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding ElementName=BookList, Path=SelectedItem.Author, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Width="200" Text="{Binding ElementName=BookList, Path=SelectedItem.Author, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Year</Label>
-                    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding ElementName=BookList, Path=SelectedItem.Year, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding ElementName=BookList, Path=SelectedItem.IsRead, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" Width="200" Text="{Binding ElementName=BookList, Path=SelectedItem.Year, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <CheckBox Grid.Column="1" Grid.Row="4" IsChecked="{Binding ElementName=BookList, Path=SelectedItem.IsRead, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                        <Label>IsRead</Label>
+                    </CheckBox>
                     <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Format</Label>
-                    <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding ElementName=BookList, Path=SelectedItem.Format, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Column="1" Grid.Row="5" Width="200" Height="20" ItemsSource="{Binding Source={StaticResource dataFromEnum}}" SelectedValue="{Binding ElementName=BookList, Path=SelectedItem.Format, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="1" Margin="15,0,15,0">
                     <Button x:Name="Outer" Click="outerButton" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button x:Name="Inner" Click="innerButton" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Button x:Name="Inner" Click="innerButton" Width="80" Height="30">
                             Delete
                         </Button>
                     </Button>
@@ -94,28 +143,36 @@
             </Grid>
             <Grid x:Name="Add" Grid.Column="1" Visibility="Visible">
                 <Grid.RowDefinitions>
-			        <RowDefinition Height="1*" />
-			        <RowDefinition Height="1*" />
-			        <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-			        <RowDefinition Height="1*" />
-			        <RowDefinition Height="1*" />
-		        </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-				    <ColumnDefinition Width="5*"/>
-				    <ColumnDefinition Width="5*"/>
-			    </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">ID</Label>
-                <TextBox x:Name="ID" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Title</Label>
-                <TextBox x:Name="Title" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">Author</Label>
-                <TextBox x:Name="Author" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Year</Label>
-                <TextBox x:Name="Year" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox x:Name="IsRead" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Format</Label>
-                <TextBox x:Name="Format" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <RowDefinition Height="14*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="80,0,80,0">
+                    <Grid.RowDefinitions>
+			            <RowDefinition Height="1*" />
+			            <RowDefinition Height="1*" />
+			            <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+		                <RowDefinition Height="1*" />
+		                <RowDefinition Height="1*" />
+	                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+				        <ColumnDefinition Width="1*"/>
+				            <ColumnDefinition Width="4*"/>
+			        </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">ID</Label>
+                    <TextBox x:Name="ID" Grid.Column="1" Width="200" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Title</Label>
+                    <TextBox x:Name="Title" Grid.Column="1" Width="200"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">Author</Label>
+                    <TextBox x:Name="Author" Grid.Column="1" Width="200" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Year</Label>
+                    <TextBox x:Name="Year" Grid.Column="1" Width="200" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <CheckBox x:Name="IsRead" Grid.Column="1" Grid.Row="4" IsChecked="{Binding ElementName=BookList, Path=SelectedItem.IsRead, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                        <Label>IsRead</Label>
+                    </CheckBox>
+                    <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Format</Label>
+                    <ComboBox x:Name="Format" Grid.Column="1" Width="200" Height="20" Grid.Row="5" ItemsSource="{Binding Source={StaticResource dataFromEnum}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Row="2">
@@ -132,11 +189,19 @@
 			        <ColumnDefinition Width="2*" />
 	    	    </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <Slider x:Name="Slider" Minimum="0" Maximum="255" Value="{Binding ElementName=SliderValue, Path=text}" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="sliderChange"/>
+                    <Slider x:Name="Slider" Minimum="0" Maximum="255" Value="{Binding ElementName=SliderValue, Path=text}" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="sliderChange" />
                 </StackPanel>
                 <Grid Grid.Column="1">
-                    <Label>Value:</Label>
-                    <TextBox x:Name="SliderValue" Text="{Binding ElementName=Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Label>Value:</Label>
+                    </Grid>
+                    <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <TextBox x:Name="SliderValue" Text="{Binding ElementName=Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Width="25"/>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
