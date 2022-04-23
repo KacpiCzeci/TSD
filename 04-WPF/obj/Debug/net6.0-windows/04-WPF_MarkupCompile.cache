@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿04-WPF
 
 
@@ -18,3 +19,25 @@ MainWindow.xaml;
 
 False
 
+=======
+﻿04-WPF
+
+
+winexe
+C#
+.cs
+C:\Users\Jula\Desktop\TSD-WPF-develop\04-WPF\obj\Debug\net6.0-windows\
+_04_WPF
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\Jula\Desktop\TSD-WPF-develop\04-WPF\App.xaml
+11407045341
+
+4-1660611100
+194-1951243044
+MainWindow.xaml;
+
+False
+
+>>>>>>> Stashed changes

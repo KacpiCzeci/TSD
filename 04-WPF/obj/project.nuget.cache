@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
   "version": 2,
   "dgSpecHash": "o85SPkAscMnfA0hgPge+JDZ59IKpgi56QFKNlblj19thQhEucXKgBKC2indvpZE/xjgwdcl9R+4CIHJEZBcDpA==",
@@ -5,4 +6,13 @@
   "projectFilePath": "C:\\Users\\ktrze\\Documents\\GitHub\\TSD\\04-WPF\\04-WPF.csproj",
   "expectedPackageFiles": [],
   "logs": []
+=======
+{
+  "version": 2,
+  "dgSpecHash": "AJhyiQ3l9fs32Q1/35A5STwi8qrdS07mU8OAAQHQXnzgXs4Mx+tGbIYhpERg+eP8sL05ECusJZyAAPKJ12t9aQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jula\\Desktop\\TSD-WPF-develop\\04-WPF\\04-WPF.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+>>>>>>> Stashed changes
 }
