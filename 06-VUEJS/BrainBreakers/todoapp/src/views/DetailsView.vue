@@ -1,11 +1,11 @@
 <template>
     <div>
-        <p>{{ todo.text }}</p>
+        <p>{{ todo.title }}</p>
         <p v-if="todo.details != ''">{{ todo.details }}</p>
         <p v-else>No details provided</p>
         <div>
             <label for="done">Done</label>
-            <input type="checkbox" v-model="todo.finished" class="done" v-on:change="updateTodo">
+            <input type="checkbox" v-model="todo.completed" class="done" v-on:change="updateTodo">
         </div>
         <button v-on:click="deleteTodo">Delete</button>
     </div>
@@ -21,10 +21,10 @@ export default {
     },
     methods: {
         updateTodo(){
-            this.$store.dispatch('updateTodo', {id: this.id, done: this.todo.finished});
+            this.$store.dispatch('updateTodo', {id: this.todo.id, done: this.todo.completed});
         },
         deleteTodo() {
-            this.$store.dispatch('deleteTodo', this.id);
+            this.$store.dispatch('deleteTodo', this.todo.id);
             this.$emit('deleteTodo', 'Deleted task!');
             this.$router.push('/');
         }

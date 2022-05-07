@@ -21,10 +21,10 @@ export default {
     },
     methods: {
         updateTodo(){
-            this.$store.dispatch('updateTodo', {id: this.id, done: this.todo.finished});
+            this.$store.dispatch('updateTodo', {id: this.todos.id, done: this.todo.finished});
         },
         deleteTodo() {
-            this.$store.dispatch('deleteTodo', this.id);
+            this.$store.dispatch('deleteTodo', this.todos.id);
             this.$emit('deleteTodo', 'Deleted task!');
             this.$router.push('/');
         }

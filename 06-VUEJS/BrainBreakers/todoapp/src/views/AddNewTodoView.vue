@@ -3,7 +3,6 @@
         <h2>Add new Todo</h2>
         <div>
             <p>Title: <input v-model="title" type="text"></p>
-            <p>Details: <input v-model="details" type="text"></p>
             <div>
                 <label for="done">Done</label>
                 <input type="checkbox" v-model="done" class="done">
@@ -19,14 +18,13 @@ export default {
     data() {
         return {
             title: '',
-            details: '',
             done: false,
         }
     },
     methods: {
         onAddClick() {
             if(this.title != ''){
-                this.$store.dispatch('addTodo', {title: this.title, details: this.details, done: this.done});
+                this.$store.dispatch('addTodo', {title: this.title, done: this.done});
                 this.$emit('onAddClick', 'Added new task!');
                 this.$router.push('/');
             }

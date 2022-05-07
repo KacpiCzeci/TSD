@@ -19,6 +19,14 @@ export default {
     HeaderItem,
     FooterItem,
   },
+  mounted() {
+    if(JSON.parse(localStorage.getItem('loaded')) == true){
+      this.$store.dispatch('setTodos', JSON.parse(localStorage.getItem('todos')));
+    }
+    else{
+      this.$store.dispatch('initData');
+    }
+  }, 
   data() {
     return {
       message: '',

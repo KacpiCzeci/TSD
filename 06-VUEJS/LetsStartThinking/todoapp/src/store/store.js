@@ -25,7 +25,7 @@ export const store = createStore({
         updateTodo(state, context){
             state.todos = state.todos.map(item => {
                 if(item.id == context.id){
-                    return {id: item.id, text: item.text, details: item.details, finished: item.finished};
+                    return {id: item.id, text: item.text, details: item.details, finished: context.done};
                 }
                 else{
                     return item;
