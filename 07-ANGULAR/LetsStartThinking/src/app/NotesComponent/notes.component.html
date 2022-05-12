@@ -1,0 +1,9 @@
+<ul class="notes">
+  <li *ngFor="let note of notes">
+    <!-- <a routerLink="/detail/{{note.id}}"> -->
+    <span class="badge">{{ note.date | date: 'dd/MM/yyyy' }}</span> {{ note.text
+    }}
+    <!-- </a> -->
+    <!-- <button class="delete" title="delete note" (click)="delete(hero)">x</button> -->
+  </li>
+</ul>

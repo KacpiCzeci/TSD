@@ -1,0 +1,7 @@
+<div>
+  <h4>Add new Note:</h4>
+  <input #textInput [(ngModel)]="text" />
+  <button (click)="add(textInput.value); textInput.value=''; redirect();">
+    Add
+  </button>
+</div>
