@@ -1,0 +1,77 @@
+.App {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  color: #636363;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Zero {
+  font-size: 6rem;
+  color: #a5a5a5;
+}
+
+.Negative {
+  font-size: 6rem;
+  color: #ff1744;
+  animation: pulse 500ms ease-in-out;
+}
+
+.Positive {
+  font-size: 6rem;
+  color: #2abf77;
+  animation: pulse 500ms ease-in-out;
+}
+
+.Button-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.Button {
+  border: none;
+  background-color: #a5a5a5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  font-size: 2rem;
+  color: inherit;
+  border-radius: 50%;
+  outline: none;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out, transform 50ms ease-in-out;
+}
+
+.Button:hover {
+  filter: brightness(1.2);
+}
+
+.Button:active {
+  transform: scale(0.9);
+}
+
+/* .Button:focus {
+  box-shadow: 0 0 0 3px #000000;
+} */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
