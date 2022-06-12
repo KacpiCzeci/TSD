@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">exercise15p</string>
+    <string name="text">text</string>
+    <string name="number">number</string>
+    <string name="click">CLICK</string>
+    <string name="textview">TextView</string>
+</resources>
